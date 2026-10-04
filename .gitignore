@@ -1,0 +1,64 @@
+# Build output
+/out/
+/build/
+CMakeUserPresets.json
+
+# Build directories created outside /out/ (per-stage trees use names like b457_perf)
+b*_perf/
+cmake-build-*/
+
+# Binary build artifacts, wherever they land
+*.exe
+*.dll
+*.lib
+*.obj
+*.exp
+*.iobj
+*.ipdb
+*.res
+*.tlog
+
+# Vendored Windows binaries the VCS build links against and ships next to the exe: LGPL FFmpeg 7
+# (import libs + runtime DLLs) and the app-local Microsoft VC++ redistributable. Without them a
+# clone cannot produce a distributable Windows build, so they are checked in despite the rules above.
+!profiles/vcs/third_party/ffmpeg/bin/*.dll
+!profiles/vcs/third_party/ffmpeg/lib/*.lib
+!profiles/vcs/third_party/vcruntime/*.dll
+
+# Copyrighted game data.  Never publish: the PSP executable, its decrypted ELF
+# and save data are the user's own dumped media, not part of this source tree.
+PSP_DATA/
+SAVEDATA/
+*.ELF
+*.elf
+*.iso
+*.cso
+
+# User-owned game data and reverse-engineering workspace
+/profiles/*/game/
+/profiles/*/analysis/
+/profiles/*/progress/
+/profiles/*/captures/
+
+# Generated scratch output (the checked-in profile corpus is not ignored)
+*.generated
+*.tmp
+*.log
+*.pdb
+*.ilk
+
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# Built by CMake (profiles/vcs/CMakeLists.txt's vcs_launcher target), not
+# checked in -- a compiled swiftc binary for whatever machine last built it
+profiles/vcs/launcher/VCSLauncher

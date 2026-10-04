@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.pspreco.vcsnative</string>
+    <key>CFBundleName</key>
+    <string>VCSNative</string>
+    <key>CFBundleDisplayName</key>
+    <string>VCSNative</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleExecutable</key>
+    <string>VCSNative</string>
+    <key>CFBundleVersion</key>
+    <string>1.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <!-- Declaring a game category lets macOS Sonoma and later offer Game Mode for this process: elevated
+         CPU/GPU scheduling priority, reduced Bluetooth input latency and background-task throttling while
+         it runs fullscreen. Without it the game is invisible to Game Mode even though it is exactly the
+         kind of fullscreen, latency-sensitive, CPU/GPU-hungry workload Game Mode exists for. -->
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.games</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>10.13</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+</dict>
+</plist>
