@@ -15,7 +15,7 @@ pack), and a settings launcher.
 > its executable decrypted outside this project. Nothing here is affiliated with or endorsed by
 > Rockstar Games, Take-Two Interactive or Sony.
 
-**Status: playable release.** The game boots, plays and holds 60 fps on a desktop CPU; see
+**Status: playable release.** The game boots, plays and holds 60 fps on a desktop GPU; see
 [Known issues](#known-issues) before reporting a problem.
 
 ## Download and play
