@@ -1,4 +1,16 @@
 cmake_minimum_required(VERSION 3.20)
+
+# Pin the macOS deployment target before project(). Without it the compiler
+# defaults to the build machine's own macOS version, so a VCSNative built on a
+# newer (or beta) macOS refuses to launch anywhere older with "You can't use
+# this version of the application with this version of macOS". 13.0 matches
+# the launcher (-target arm64-apple-macosx13.0) and the LGPL FFmpeg build.
+# -DCMAKE_OSX_DEPLOYMENT_TARGET=... or MACOSX_DEPLOYMENT_TARGET still win.
+if(CMAKE_HOST_APPLE AND NOT DEFINED CMAKE_OSX_DEPLOYMENT_TARGET
+        AND NOT DEFINED ENV{MACOSX_DEPLOYMENT_TARGET})
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0" CACHE STRING "Minimum macOS version to target")
+endif()
+
 project(PSPRecomp VERSION 0.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
